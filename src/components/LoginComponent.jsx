@@ -26,6 +26,7 @@ export default function LoginComponent() {
       console.log(response)
     }
   return (
+    <div>
     <div className='flex flex-col items-center justify-center h-screen mt-7'>
         <h1 className='text-3xl'>Login </h1>
 
@@ -53,6 +54,7 @@ export default function LoginComponent() {
          <div className='mt-5'>
         
          </div>
+    </div>
     </div>
   )
 }
