@@ -14,6 +14,7 @@ export default function RegisterComponent() {
           let res = await RegisterApi(credentials.email, credentials.password)
         console.log(res)
         toast.success('Account Created Successfully !')
+
         } catch (error) {
           toast.error('There was an error !')
         }
@@ -21,7 +22,7 @@ export default function RegisterComponent() {
 
 
   return (
-    <div className='flex flex-col items-center mt-7'>
+    <div className='flex flex-col items-center justify-center h-screen mt-7'>
         <h1 className='text-3xl'>Create a new account </h1>
 
         <input

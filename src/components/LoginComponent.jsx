@@ -26,7 +26,7 @@ export default function LoginComponent() {
       console.log(response)
     }
   return (
-    <div className='flex flex-col items-center mt-7'>
+    <div className='flex flex-col items-center justify-center h-screen mt-7'>
         <h1 className='text-3xl'>Login </h1>
 
         <input
