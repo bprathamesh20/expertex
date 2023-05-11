@@ -2,12 +2,12 @@
 import React, { useState } from 'react';
 import { RegisterApi } from '../api/authApi'
 import { toast } from 'react-toastify';
-
+import { useNavigate } from "react-router-dom";
 
 
 export default function RegisterComponent() {
     const [credentials, setCredentials] = useState({ email: '', password: '', name: ''});
-    
+    let navigate = useNavigate()
     const register = async(event) =>{
         event.preventDefault();
         try {
@@ -51,6 +51,7 @@ export default function RegisterComponent() {
           <div className='flex flex-row'>
 
          <button className='btn mt-5 ml-5' onClick={register}>Join</button>   
+         <button className='btn mt-5 ml-5' onClick={() => navigate("/login")}>Already a user</button> 
          </div>
         
           
