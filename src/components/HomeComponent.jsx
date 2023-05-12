@@ -3,8 +3,8 @@ import Navbar from './navbar'
 export default function HomeComponent() {
   return (
     <div>
-        <Navbar/>
-        
+        <Navbar isLoggedIn={true}/>
+
     </div>
   )
 }

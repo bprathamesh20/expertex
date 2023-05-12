@@ -52,7 +52,7 @@ export default function RegisterComponent() {
           <div className='flex flex-row'>
 
          <button className='btn mt-5 ml-5' onClick={register}>Join</button>   
-         <button className='btn mt-5 ml-5' onClick={() => navigate("/login")}>Already a user</button> 
+         <button className='btn mt-5 ml-5' onClick={() => navigate("/")}>Already a user</button> 
          </div>
         
           
