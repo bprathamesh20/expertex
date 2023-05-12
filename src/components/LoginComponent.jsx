@@ -15,6 +15,7 @@ export default function LoginComponent() {
           let res = await LoginApi(credentials.email, credentials.password)
         console.log(res)
         toast.success('Successfully Loged In !')
+        navigate('/home')
         } catch (error) {
           toast.error('Incorrect Login credentials !')
         }
