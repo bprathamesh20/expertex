@@ -1,31 +1,29 @@
-import React from 'react'
-import logo from '../assets/logo.png'
-import { BsBoxArrowRight} from "react-icons/bs";
+import React from 'react';
+import logo from '../assets/logo.png';
 import { useNavigate } from 'react-router-dom';
+import ProfilePopUp from './common/ProfilePopUp';
 
 export default function Navbar(props) {
-  const isLoggedIn = props.isLoggedIn
-  const navigate = useNavigate()
-  if(isLoggedIn){
-    return (
-      <div className='h-5 flex flex-row mt-5 justify-between items-center '>
-          <div>
-          <img src={logo} alt="logo" className='h-20 ml-5'/>
-          </div>
-          <div className='mr-5'>
-          <button onClick={() => navigate("/")} ><BsBoxArrowRight/></button>
-          </div>
-      </div>
-    )
+  const isLoggedIn = props.isLoggedIn;
+  const navigate = useNavigate();
 
-  }
-  return (
-    <div className='h-5 flex flex-row mt-5 justify-between items-center '>
-        <div>
-        <img src={logo} alt="logo" className='h-20 ml-5'/>
+  if (isLoggedIn) {
+    return (
+      <div className='h-5 flex flex-row mt-5 justify-between items-center'>
+        <div >
+          <img src={logo} alt='logo' className='h-20 ml-5' />
+          
         </div>
-    
+        <ProfilePopUp />
+      </div>
+    );
+  }
+
+  return (
+    <div className='h-5 flex flex-row mt-5 justify-between items-center'>
+      <div>
+        <img src={logo} alt='logo' className='h-20 ml-5' />
+      </div>
     </div>
-  )
-  
+  );
 }
