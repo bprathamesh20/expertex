@@ -9,7 +9,7 @@ export default function Navbar(props) {
 
   if (isLoggedIn) {
     return (
-      <div className='h-5 flex flex-row mt-5 justify-between items-center'>
+      <div className='h-5 flex flex-row mt-8 justify-between items-center p-2'>
         <div >
           <img src={logo} alt='logo' className='h-20 ml-5' />
           

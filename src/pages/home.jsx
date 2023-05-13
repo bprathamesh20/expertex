@@ -10,6 +10,7 @@ export default function Home() {
         onAuthStateChanged(auth,(res) => {
             if(!res?.accessToken){
                 navigate('/')
+
             }
         })
     })

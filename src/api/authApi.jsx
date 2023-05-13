@@ -9,7 +9,6 @@ export const LoginApi = (email, password) => {
         return err
     }
  
-  
 }
 
 

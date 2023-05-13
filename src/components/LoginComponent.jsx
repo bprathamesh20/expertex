@@ -1,10 +1,7 @@
-
 import React, { useState } from 'react';
 import { LoginApi } from '../api/authApi'
-
 import { useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
-
 
 export default function LoginComponent() {
     const [credentials, setCredentials] = useState({ email: '', password: '' });
@@ -37,7 +34,7 @@ export default function LoginComponent() {
             }
             type="email"
             className="input input-bordered w-full max-w-xs mt-5"
-            placeholder="Email "
+            placeholder="Email"
           />
           <input
             onChange={(event) =>
