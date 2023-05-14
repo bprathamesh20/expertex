@@ -15,7 +15,8 @@ export default function Modal() {
   }
 
   const handleSubmit = () => {
-    postStatus({ query, tags, createdAt })
+    const userEmail = localStorage.getItem('userEmail')
+    postStatus({ query, tags, createdAt, userEmail })
   }
 
   return (

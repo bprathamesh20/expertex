@@ -18,11 +18,11 @@ export default function PostComponent() {
 
   return (
     <div>
-      <div className='p-10'>
+      <div className='p-10 lg:ml-10 lg:w-3/5 '>
       <ul>
         {posts.map((post) => (
           <li key={post.id}>
-            <div className="card w-96 bg-base-200 shadow-xl mt-5">
+            <div className="card w-96 bg-base-200 shadow-xl mt-5 lg:w-auto">
               <div className="card-body">
                 <h2 className="card-title text-white">{post.tags}</h2>
                 <p>{post.query}</p>
