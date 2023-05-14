@@ -1,6 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { postStatus } from '../../../api/firestoreAPI'
 
 export default function Modal() {
+  const [query, setQuery] = useState('')
+  const [tags, setTags] = useState('')
+
+  const handleQueryChange = (event) => {
+    setQuery(event.target.value)
+  }
+
+  const handleTagsChange = (event) => {
+    setTags(event.target.value)
+  }
+
+  const handleSubmit = () => {
+    postStatus({ query, tags })
+  }
+
   return (
     <div className='mt-10 ml-5 flex flex-row '>
       {/* The button to open modal */}
@@ -13,11 +29,13 @@ export default function Modal() {
           <label htmlFor="my-modal-3" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
           <h3 className="text-lg font-bold">Make a Post</h3>
           <div className='flex flex-col'>
-          <input type="text" className='input  mt-5 bg-slate-800' placeholder='Describe your query'/>
-          <button className='btn mt-8'>Post</button>
+            <input type="text" className='input  mt-5 bg-slate-800' placeholder='Describe your query' value={query} onChange={handleQueryChange} />
+            <input type="text" className='input  mt-5 bg-slate-800' placeholder='Tags' value={tags} onChange={handleTagsChange} />
+            <button className='btn mt-8' onClick={handleSubmit}>Post</button>
           </div>
         </div>
       </div>
     </div>
   )
 }
+ 
