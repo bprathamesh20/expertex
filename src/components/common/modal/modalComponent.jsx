@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import { postStatus } from '../../../api/firestoreAPI'
+import { serverTimestamp } from 'firebase/firestore'
 
 export default function Modal() {
   const [query, setQuery] = useState('')
   const [tags, setTags] = useState('')
-
+  const createdAt = serverTimestamp()
   const handleQueryChange = (event) => {
     setQuery(event.target.value)
   }
@@ -14,7 +15,7 @@ export default function Modal() {
   }
 
   const handleSubmit = () => {
-    postStatus({ query, tags })
+    postStatus({ query, tags, createdAt })
   }
 
   return (
