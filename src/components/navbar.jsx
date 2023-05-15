@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from '../assets/logo.png';
 import { useNavigate } from 'react-router-dom';
-import ProfilePopUp from './common/ProfilePopUp';
+import ProfilePopUp from './common/profilePopUp'
 
 export default function Navbar(props) {
   const isLoggedIn = props.isLoggedIn;
