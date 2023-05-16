@@ -10,7 +10,7 @@ export default function PostComponent() {
 
       // loop through each post and get the user name
       const updatedPosts = await Promise.all(response.map(async (post) => {
-        const userName = await getCurrentUser(post.userEmail);
+        const userName = await getSingleUser(post.userEmail);
         return { ...post, userName };
       }));
 
@@ -29,7 +29,7 @@ export default function PostComponent() {
         <ul>
           {posts.map((post) => (
             <li key={post.id}>
-              <div className="card w-96 bg-base-200 shadow-xl mt-5 lg:w-auto">
+              <div className="card w-80 bg-base-200 shadow-xl mt-5 lg:w-auto">
                 <div className="card-body">
                   <p>Posted by {post.userName}</p>
                   <h2 className="card-title text-white">{post.tags}</h2>

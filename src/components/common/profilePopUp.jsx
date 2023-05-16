@@ -27,7 +27,7 @@ export default function ProfilePopUp() {
               />
             </div>
           </div>
-          {userName && <span className="ml-2">{userName}</span>}
+          {userName && <span className="ml-2 ">{userName}</span>}
         </label>
         <ul
           tabIndex={0}

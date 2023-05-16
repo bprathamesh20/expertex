@@ -9,7 +9,7 @@ export default function Navbar(props) {
 
   if (isLoggedIn) {
     return (
-      <div className='h-5 flex flex-row mt-8 justify-between items-center p-2'>
+      <div className='h-5 flex flex-row pt-8 pb-8 justify-between items-center  bg-slate-800'>
         <div >
           <img src={logo} alt='logo' className='h-20 ml-5' />
           
@@ -20,7 +20,7 @@ export default function Navbar(props) {
   }
 
   return (
-    <div className='h-5 flex flex-row mt-5 justify-between items-center'>
+    <div className='h-10 flex flex-row pt-6 pb-6 justify-between items-center bg-slate-800'>
       <div>
         <img src={logo} alt='logo' className='h-20 ml-5' />
       </div>
