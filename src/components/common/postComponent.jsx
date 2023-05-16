@@ -34,7 +34,7 @@ export default function PostComponent() {
 
   return (
     <div>
-      <div className='p-10 lg:ml-10 lg:w-3/5 '>
+      <div className='p-5 lg:ml-10 lg:w-3/5 '>
         <ul>
           {displayedPosts.map((post) => (
             <li key={post.id}>
