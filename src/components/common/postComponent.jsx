@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { getPosts, getCurrentUser, getSingleUser } from '../../api/firestoreAPI';
+
 export default function PostComponent() {
   const [posts, setPosts] = useState([]);
+  const [displayedPosts, setDisplayedPosts] = useState([]);
+  const [postCounter, setPostCounter] = useState(4);
 
   useEffect(() => {
     async function fetchData() {
@@ -20,19 +23,30 @@ export default function PostComponent() {
     fetchData();
   }, []);
 
-  console.log(posts)
+  useEffect(() => {
+    const postsToDisplay = posts.slice(0, postCounter);
+    setDisplayedPosts(postsToDisplay);
+  }, [posts, postCounter]);
 
+  function handleLoadMore() {
+    setPostCounter(postCounter + 4);
+  }
 
   return (
     <div>
       <div className='p-10 lg:ml-10 lg:w-3/5 '>
         <ul>
-          {posts.map((post) => (
+          {displayedPosts.map((post) => (
             <li key={post.id}>
               <div className="card w-80 bg-base-200 shadow-xl mt-5 lg:w-auto">
                 <div className="card-body">
                   <p>Posted by {post.userName}</p>
-                  <h2 className="card-title text-white">{post.tags}</h2>
+                  <h2 className="card-title text-white">{post.title}</h2>
+                  <div>
+                    {post.tagArray && post.tagArray.map((tag) => (
+                      <span key={tag} className="badge badge-primary mx-1">{tag}</span>
+                    ))}
+                  </div>
                   <p>{post.query}</p>
 
                   <div className="card-actions justify-end">
@@ -43,6 +57,11 @@ export default function PostComponent() {
             </li>
           ))}
         </ul>
+        {displayedPosts.length < posts.length && (
+          <button className="btn btn-primary mt-8 " onClick={handleLoadMore}>
+            Load More
+          </button>
+        )}
       </div>
     </div>
   );

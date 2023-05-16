@@ -15,6 +15,7 @@ export const postStatus = async (data) => {
     const docRef = await addDoc(dbRef, data)
     console.log("Document written with ID: ", docRef.id);
     toast.success('Posted')
+    window.location.reload();
   } catch (e) {
     console.error("Error adding document: ", e);
     toast.error('Error')
